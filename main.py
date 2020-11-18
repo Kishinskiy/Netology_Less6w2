@@ -4,22 +4,27 @@ class Album:
     tracks = []
 
     def get_tracks(self):
-        pass
+        for track in self.tracks:
+            Track.show(track)
 
-    def add_track(self):
-        pass
+    def add_track(self, track_name, track_duration):
+        song = Track(track_name, track_duration)
+        self.tracks.append(song)
+        return
 
     def get_duration(self):
         pass
 
 
 class Track:
-    name = ''
-    duration: int = 0
+    def __init__(self, name, duration=0):
+        self.name = name
+        self.duration = duration
 
     def show(self):
         return print(f'{self.name}-{self.duration}')
 
 
 if __name__ == '__main__':
-    pass
+    Album.add_track(Album(), 'Super', 3, )
+    # Album.get_tracks(self)

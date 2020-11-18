@@ -1,7 +1,7 @@
 class Album:
     def __init__(self, name, group):
-        self.name = ''
-        self.group = ''
+        self.name = name
+        self.group = group
         self.tracks = []
 
     def get_tracks(self):

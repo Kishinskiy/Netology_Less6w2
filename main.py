@@ -1,11 +1,12 @@
 class Album:
-    name = ''
-    group = ''
-    tracks = []
+    def __init__(self, name, group):
+        self.name = ''
+        self.group = ''
+        self.tracks = []
 
     def get_tracks(self):
         for track in self.tracks:
-            Track.show(track)
+            print(track.show())
 
     def add_track(self, track_name, track_duration):
         song = Track(track_name, track_duration)
@@ -22,9 +23,17 @@ class Track:
         self.duration = duration
 
     def show(self):
-        return print(f'{self.name}-{self.duration}')
+        print(f'{self.name}-{self.duration}')
 
 
 if __name__ == '__main__':
-    Album.add_track(Album(), 'Super', 3, )
-    # Album.get_tracks(self)
+    album1 = Album('Songister', 'Star People')
+    album1.name = 'New age'
+    album1.add_track('Super Start', 3)
+    album1.add_track('Second Station', 2)
+    album1.add_track('Nova', 5)
+    album1.get_tracks()
+
+    album2 = Album('Apple', 'Seven Day')
+
+    album2.get_tracks()

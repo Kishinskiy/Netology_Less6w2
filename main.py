@@ -13,10 +13,14 @@ class Album:
         self.tracks.append(song)
         return
 
-    def get_duration(self, track_name):
+    def get_duration(self):
+        # for track in self.tracks:
+        #     if track.name == track_name:
+        #         print(track.duration)
+        all_duration = 0
         for track in self.tracks:
-            if track.name == track_name:
-                print(track.duration)
+            all_duration += track.duration
+        return all_duration
 
 
 class Track:
@@ -26,14 +30,6 @@ class Track:
 
     def show(self):
         print(f'{self.name}-{self.duration}')
-
-
-def show_full_duration(name):
-    all_duration = 0
-    for track in name.tracks:
-        all_duration += track.duration
-    return all_duration
-
 
 if __name__ == '__main__':
     album1 = Album('Songister', 'Star People')
@@ -47,5 +43,7 @@ if __name__ == '__main__':
     album2.add_track('NEXT', 4)
     album2.add_track('Final Day', 5)
 
-    print(f'длина альбома {album1.name} = {show_full_duration(album1)} минут')
-    print(f'длина альбома {album2.name} = {show_full_duration(album2)} минут')
+    print(f'длина альбома {album1.name} = {album1.get_duration()} минут')
+    print(f'длина альбома {album2.name} = {album2.get_duration()} минут')
+
+

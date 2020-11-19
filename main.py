@@ -31,7 +31,6 @@ class Track:
 
 if __name__ == '__main__':
     album1 = Album('Songister', 'Star People')
-    album1.name = 'New age'
     album1.add_track('Super Start', 3)
     album1.add_track('Second Station', 2)
     album1.add_track('Nova', 5)

@@ -43,9 +43,17 @@ class Track:
     def __str__(self):
         return f'{self.name}-{self.duration}min'
 
+    def __gt__(self, other):
+        return isinstance(other, Track) and \
+            self.duration > other.duration
+
+    def __lt__(self, other):
+        return isinstance(other, Track) and \
+            self.duration < other.duration
+
     def __eq__(self, other):
         return isinstance(other, Track) and \
-            self.duration > other.duration or self.duration < other.duration or self.duration == other.duration
+            self.duration == other.duration
 
 
 if __name__ == '__main__':
@@ -62,6 +70,8 @@ if __name__ == '__main__':
     track1 = Track('First Equals Track', 6)
     track2 = Track('Second Equals Track', 4)
 
+    print(track1 > track2)
+    print(track1 < track2)
     print(track1 == track2)
 
     print(album2)

@@ -43,6 +43,10 @@ class Track:
     def __str__(self):
         return f'{self.name}-{self.duration}min'
 
+    def __eq__(self, other):
+        return isinstance(other, Track) and \
+            self.duration > other.duration or self.duration < other.duration or self.duration == other.duration
+
 
 if __name__ == '__main__':
     album1 = Album('Songister', 'Star People')
@@ -54,6 +58,11 @@ if __name__ == '__main__':
     album2.add_track('I build new World', 3)
     album2.add_track('NEXT', 4)
     album2.add_track('Final Day', 5)
+
+    track1 = Track('First Equals Track', 6)
+    track2 = Track('Second Equals Track', 4)
+
+    print(track1 == track2)
 
     print(album2)
 
